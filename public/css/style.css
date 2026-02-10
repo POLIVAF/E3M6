@@ -1,14 +1,51 @@
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f6f8;
+  margin: 0;
+  padding: 20px;
+}
+
+header, footer {
   text-align: center;
-  margin-top: 50px;
 }
 
-h1 {
-  color: #2c3e50;
+.project-card {
+  background: white;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.priority-high { color: red; font-weight: bold; }
-.priority-medium { color: orange; }
-.priority-low { color: blue; }
+.priority-high {
+  color: red;
+  font-weight: bold;
+}
+
+.priority-medium {
+  color: orange;
+}
+
+.priority-low {
+  color: green;
+}
+
+ul {
+  list-style: none;   /* Quita los puntitos */
+  padding-left: 0;    /* Quita la sangría izquierda */
+}
+
+header, footer {
+  text-align: center;
+  padding: 15px 0;
+}
+
+header h1 {
+  margin: 0;
+}
+
+footer p {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+}
