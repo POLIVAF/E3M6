@@ -3,15 +3,19 @@ const app = express();
 const hbs = require("hbs"); // Requerimos HBS
 const path = require("path");
 
+
 const PORT = 3000;
 
 // Middleware para archivos estáticos
 app.use(express.static("public"));
+app.use("/css", express.static(path.join(__dirname, "node_modules/bootstrap/dist/css")));
+app.use("/js", express.static(path.join(__dirname, "node_modules/bootstrap/dist/js")));
 // Configurar motor de plantillas
 app.set("view engine", "hbs");
-app.set("view", path.join(__dirname, "view"))
+
+hbs.registerPartials(path.join(__dirname, '/views/partials'));
 // Registrar parciales 
-hbs.registerPartials(__dirname + "/views/partials");
+
 
 // Helper para la clase de prioridad
 hbs.registerHelper("priorityClass", function (priority) {
