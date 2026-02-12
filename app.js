@@ -12,6 +12,7 @@ app.use("/css", express.static(path.join(__dirname, "node_modules/bootstrap/dist
 app.use("/js", express.static(path.join(__dirname, "node_modules/bootstrap/dist/js")));
 // Configurar motor de plantillas
 app.set("view engine", "hbs");
+app.set('views', path.join(__dirname, 'views'));
 
 hbs.registerPartials(path.join(__dirname, '/views/partials'));
 // Registrar parciales 
