@@ -3,6 +3,12 @@ const app = express();
 const hbs = require("hbs"); // Requerimos HBS
 const path = require("path");
 
+//Importando Middlewares
+const autorizacionMiddleware = require("./middlewares/autorizacion");
+const currentPath = require("./middlewares/currentPath");
+
+//Importando helpers
+require("./helpers/isActivado");
 
 const PORT = 3000;
 
@@ -10,6 +16,7 @@ const PORT = 3000;
 app.use(express.static("public"));
 app.use("/css", express.static(path.join(__dirname, "node_modules/bootstrap/dist/css")));
 app.use("/js", express.static(path.join(__dirname, "node_modules/bootstrap/dist/js")));
+app.use(currentPath);
 // Configurar motor de plantillas
 app.set("view engine", "hbs");
 app.set('views', path.join(__dirname, 'views'));
